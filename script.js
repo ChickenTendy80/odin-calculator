@@ -34,3 +34,14 @@ function operate(str,a,b){
         return "INVALID OPERATION";
     }
 }
+
+const button = document.querySelectorAll("button");
+const result = document.querySelector("result");
+
+button.forEach(elt => {
+    elt.addEventListener("click", () => {
+        //Add text to results
+        console.log(elt.value);
+        //result.textContent(elt.value);
+    });
+});

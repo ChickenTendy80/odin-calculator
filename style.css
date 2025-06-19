@@ -1,29 +1,49 @@
 body{
-    margin: 0px;
-    text-align:center;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
     padding: 36px;
-    width: 512px;
-    height: 512px;
+    background-color: #f0f0f0;
 }
+
+#container{
+    display: flex;
+    justify-content: center;
+    align-content: flex-start;
+    padding-top: 36px;
+    padding-bottom: 36px;
+    width: 512px; /* 16 * 32px (size of each square) */
+    height: 512px;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
 .result{
     border: 1px solid black;
     padding: 18px;
+    width: 48;
+    height: 508;
 }
 
 .num-container{
     display:flex;
-    justify-content: space-evenly;
-    align-items: center;
-    gap: 8px;
+    flex-wrap: wrap;
 }
 
 .button{
+    width: 170px;
+    height: 170px;
+    box-sizing: border-box;
     /*Adding boxes around each number*/
     border: 1px solid black;
-    padding: 6px;
+    padding: 120px;
+    font-size: 36px;
+    background-color: white;
 }
 
 .op-container{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
 }
