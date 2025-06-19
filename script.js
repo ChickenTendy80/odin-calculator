@@ -12,7 +12,10 @@ button.forEach(elt => {
         output += elt.value;
         results.textContent = output;
         if(elt.value == "="){
-            //Call operation
+            //Call operation to the output
+            output = "";
+            //Show output in result
+            results.textContent = output;
         }
     });
 });
