@@ -1,3 +1,28 @@
+let var1 ="";
+let var2 = "";
+let operation = "";
+let output ="";
+
+const button = document.querySelectorAll("button");
+const results = document.querySelector(".result");
+
+button.forEach(elt => {
+    elt.addEventListener("click", () => {
+        //Add text to results
+        output += elt.value;
+        results.textContent = output;
+        if(elt.value == "="){
+            //Call operation
+        }
+    });
+});
+
+
+
+
+
+
+
 /*Basic operations--------------------------------------------------*/
 function add(a,b){
     return a+b;
@@ -34,14 +59,3 @@ function operate(str,a,b){
         return "INVALID OPERATION";
     }
 }
-
-const button = document.querySelectorAll("button");
-const result = document.querySelector("result");
-
-button.forEach(elt => {
-    elt.addEventListener("click", () => {
-        //Add text to results
-        console.log(elt.value);
-        //result.textContent(elt.value);
-    });
-});

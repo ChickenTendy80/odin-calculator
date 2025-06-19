@@ -19,6 +19,9 @@ body{
 
 
 .result{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
     border: 1px solid black;
     box-sizing: border-box;
     margin-bottom: 36px;
@@ -39,8 +42,8 @@ body{
 }
 
 .button{
-    width: 200px;
-    height: 200px;
+    min-width: 120px;
+    min-height: 120px;
     box-sizing: border-box;
     /*Adding boxes around each number*/
     border: 1px solid black;
