@@ -1,6 +1,3 @@
-let var1 ="";
-let var2 = "";
-const integers = "1234567890";
 let operation = "";
 let output ="";
 
