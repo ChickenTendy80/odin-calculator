@@ -4,6 +4,13 @@ let output ="";
 const button = document.querySelectorAll("button");
 const results = document.querySelector(".result");
 
+function calculateInput(str){
+    output = output.slice(0,-1);
+    const strArray = output.split(str);
+    const numberArray = strArray.map((tmp)=> +tmp);
+    output = operate(str,numberArray[0],numberArray[1]);
+}
+
 button.forEach(elt => {
     elt.addEventListener("click", () => {
         //Add text to results
@@ -20,34 +27,17 @@ button.forEach(elt => {
         if(elt.value == "="){
             //console.log("equals!");
             //Call operation to the output
-            let strArray = [];
-            let numberArray =[];
-            output = output.slice(0,-1);
-
             if(output.includes("+")){
-                strArray = output.split("+");
-                numberArray = strArray.map((str)=>+str);
-                //console.log(numberArray);
-                output = operate("+",numberArray[0],numberArray[1]);
-                //console.log(output);
+                calculateInput("+");
             }
             else if(output.includes("-")){
-                strArray = output.split("-");
-                numberArray = strArray.map((str)=>+str);
-                //console.log(numberArray);
-                output = operate("-",numberArray[0],numberArray[1]);
+                calculateInput("-");
             }
             else if(output.includes("*")){
-                strArray = output.split("*");
-                numberArray = strArray.map((str)=>+str);
-                //console.log(numberArray);
-                output = operate("*",numberArray[0],numberArray[1]);
+                calculateInput("*");
             }
             else if(output.includes("/")){
-                strArray = output.split("/");
-                numberArray = strArray.map((str)=>+str);
-                //console.log(numberArray);
-                output = operate("/",numberArray[0],numberArray[1]);
+                calculateInput("/");
             }
 
             //Show output in result
