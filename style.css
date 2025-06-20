@@ -14,6 +14,7 @@ body{
     width: 512px; /* 16 * 32px (size of each square) */
     height: 512px;
     border: 1px solid #ccc;
+    border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -27,6 +28,7 @@ body{
     margin-bottom: 36px;
     width: 480px;
     height: 48px;
+    font-size: 36px;
 }
 
 .center{
@@ -38,12 +40,13 @@ body{
     display:flex;
     flex-wrap: wrap;
     justify-content: center;
-    width: 80px;
+    width: 250px;
 }
 
-.button{
-    min-width: 120px;
-    min-height: 120px;
+button{
+    width: 60px;
+    height: 60px;
+    margin: 10px;
     box-sizing: border-box;
     /*Adding boxes around each number*/
     border: 1px solid black;
@@ -53,5 +56,10 @@ body{
 
 .op-container{
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
+}
+
+.op-container .clear{
+    width: 180px;
 }
