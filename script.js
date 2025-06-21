@@ -4,11 +4,11 @@ let output ="";
 const button = document.querySelectorAll("button");
 const results = document.querySelector(".result");
 
-function calculateInput(str){
-    output = output.slice(0,-1);
-    const strArray = output.split(str);
+function calculateInput(str, outputTmp){
+    outputTmp = outputTmp.slice(0,-1);
+    const strArray = outputTmp.split(str);
     const numberArray = strArray.map((tmp)=> +tmp);
-    output = operate(str,numberArray[0],numberArray[1]);
+    return operate(str,numberArray[0],numberArray[1]);
 }
 
 button.forEach(elt => {
@@ -17,6 +17,11 @@ button.forEach(elt => {
         if(elt.value == "cl"){
             output = "";
             //console.log("empty");
+        }
+        else if(elt.value== "del"){
+            if(output.length > 0){
+                output = output.slice(0,-1);
+            }
         }
         else{
             output += elt.value;
@@ -28,16 +33,16 @@ button.forEach(elt => {
             //console.log("equals!");
             //Call operation to the output
             if(output.includes("+")){
-                calculateInput("+");
+                output = calculateInput("+",output);
             }
             else if(output.includes("-")){
-                calculateInput("-");
+                output = calculateInput("-",output);
             }
             else if(output.includes("*")){
-                calculateInput("*");
+                output = calculateInput("*",output);
             }
             else if(output.includes("/")){
-                calculateInput("/");
+                output = calculateInput("/",output);
             }
 
             //Show output in result
